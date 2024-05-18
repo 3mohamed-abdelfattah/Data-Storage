@@ -1,6 +1,7 @@
 package com.example.datastorage
 
 import android.os.Bundle
+import android.os.Environment
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,8 @@ class InternalExternalStorage : AppCompatActivity() {
 
     }
 
+    // To Get Text From Input And Send it to saveTextToFile Function
+
     private fun saveButton() {
 
         binding.saveStorage.setOnClickListener {
@@ -36,8 +39,30 @@ class InternalExternalStorage : AppCompatActivity() {
         }
     }
 
+    // TO Save Text In Internal Storage  (/data/data/com.example.datastorage/Sample.txt)
+
+//    private fun saveTextToFile(text: String) {
+//        val storagePath = applicationInfo.dataDir
+//        val fileName = "Sample.txt"
+//        val file = File("$storagePath/$fileName")
+//        file.writeText(text)
+//    }
+
+
+    // TO Save Text In External Storage (/sdcard/Android/data/com.example.datastorage/files/Sample.txt)
+
+//    private fun saveTextToFile(text: String) {
+//        val storagePath = getExternalFilesDir(null)?.path.toString()
+//        val fileName = "Sample.txt"
+//        val file = File("$storagePath/$fileName")
+//        file.writeText(text)
+//    }
+
+
+    // TO Save Text In External Storage ( IN Main External ) Need Permission !
+
     private fun saveTextToFile(text: String) {
-        val storagePath = applicationInfo.dataDir
+        val storagePath = Environment.getExternalStorageDirectory().path
         val fileName = "Sample.txt"
         val file = File("$storagePath/$fileName")
         file.writeText(text)
