@@ -4,4 +4,6 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="load_data">Load Data</string>
+    <string name="put_text_to_save_in_storage">Put Text To Save in Storage</string>
+    <string name="save">Save</string>
 </resources>
