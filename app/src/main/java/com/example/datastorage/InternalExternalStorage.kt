@@ -22,12 +22,13 @@ class InternalExternalStorage : AppCompatActivity() {
 
     //Request runtime permissions
 
-    val requestPermissionLauncher =
+    private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
-
+                saveTextToFile(binding.textStorage.text.toString())
+                Toast.makeText(this, "Data Saved IN Storage", Toast.LENGTH_SHORT).show()
             } else {
-
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
             }
         }
 
